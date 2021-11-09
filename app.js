@@ -25,44 +25,6 @@ app.get('/restaurants',(req,res) =>{
         res.send(result)
     })
 })
-//List restaurants wrt to city
-// params example
-/*app.get('/restaurant/:cityId',(req,res) =>{
-    var cityId = req.params.cityId;
-    db.collection('restaurents').find({city:cityId}).toArray((err,result)=>{
-        if(err) throw err;
-        res.send(result)
-    })
-})
-
-//query example
-app.get('/restaurant',(req,res) =>{
-    if(req.query.cityId)
-    var cityId = req.query.cityId?req.query.cityId:"2";
-    db.collection('restaurents').find({city:cityId}).toArray((err,result)=>{
-        if(err) throw err;
-        res.send(result)
-    })
-})
-
-// query example
-app.get('/restaurants',(req,res) =>{
-    var mealType = req.query.mealType?req.query.mealType:"4";
-    db.collection('restaurants').find({"type.mealtype":mealType}).toArray((err,result)=>{
-        if(err) throw err;
-        res.send(result)
-    })
-})
-
-// query example
-app.get('/restaurant',(req,res) =>{
-    if(req.query.cityId)
-    var cityId = req.query.cityId?req.query.cityId:"2";
-    db.collection('restaurants').find({city:cityId}).toArray((err,result)=>{
-        if(err) throw err;
-        res.send(result)
-    })
-})*/
 
 app.get('/restaurant',(req,res) =>{
     var query = {}
@@ -78,7 +40,6 @@ app.get('/restaurant',(req,res) =>{
 })
 
 //filterapi
-//(http://localhost:8210/filter/1?lcost=500&hcost=600)
 app.get('/filter/:mealType',(req,res) => {
     var mealType = req.params.mealType;
     var query = {"type.mealtype":mealType};
