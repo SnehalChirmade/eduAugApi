@@ -36,8 +36,8 @@ app.get('/restaurants',(req,res) =>{
 // query example
 app.get('/restaurant',(req,res) =>{
     var query = {}
-    if(req.query.cityId){
-        query={city:req.query.cityId}
+    if(req.query.stateId){
+        query={stateId:Number(req.query.stateId)}
     }else if(req.query.mealtype){
         query={"type.mealtype":req.query.mealtype}
     }
