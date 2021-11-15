@@ -19,7 +19,7 @@ app.get('/',(req,res) => {
 
 //List All cities
 app.get('/location',(req,res) =>{
-    db.collection("locations").find().toArray((err,result)=>{
+    db.collection("location").find().toArray((err,result)=>{
         if(err) throw err;
         res.send(result)
     })
